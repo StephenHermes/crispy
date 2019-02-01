@@ -4,28 +4,53 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Lato", Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   font-size: 14px;
-  background-color: #eee;
+  background-color: #fff;
+  background-image: url("images/stripes-light.png");
+  background-repeat: repeat;
 }
 
 .container {
   width: 700px;
+  background-color: #efefef;
   margin-left: auto;
   margin-right: auto;
 }
 
-header, .content {
+header {
   padding: 15px;
-  background-color: #1b2a37;
+  color: #fff;
+  background-color: #ff383f;
+}
+
+header > h1 {
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.content {
+  padding: 15px;
+  color: #a9a9a9;
+  background-color: #efefef;
+}
+
+.panel {
+  /* color: #fff; */
+  max-height: 500px;
+  padding: 0px;
+  /* background-color: #efefef; */
+  display: none;
+  overflow-y: scroll;
 }
 
 .accordion {
-  background-color:#52afe5;
-  color: #fff;
+  background-color:#caebf2;
+  color: #a9a9a9;
   font-size: 18px;
-  font-weight: 1;
+  font-weight: 300;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -36,28 +61,22 @@ header, .content {
   transition: 0.4s;
 }
 
-.accordion.active, .accordion:hover {
-  background-color: #206187;
-}
-
-.panel {
-  /*height: 500px;*/
-  color: #fff;
-  max-height: 500px;
-  padding: 0px;
-  background-color: #1b2a37;
-  display: none;
-  overflow-y: scroll;
-}
-
 .accordion:after {
-  content: "\02795"; /* unicode plus sign */
+  content: "\25b7"; 
+  font-weight: bold;
   font-size: 20px;
-  color: #fff; /* because + unicode and not text, this doesnt work */
+  color: #a9a9a9; 
   float: right;
   margin-left: 5px;
 }
 
+.accordion.active, .accordion:hover {
+  background-color: #ff383f;
+  color: #eee;
+}
+
 .accordion.active:after {
-  content: "\2796"; /* unicode minus sign */
+  content: "\25bd";
+  font-weight: bold;
+  color: #eee;
 }
