@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="utf-8">
+    {% if project.name %}
+    <title>Crispy - {{ project.name }}</title>
+    {% else %}
+    <title>Crispy</title>
+    {% endif %}
+  </head>
+
+  <body> 
+    <div class="container">
+      <header>
+        <h1>Crispy so so crispy</h1>
+      </header>
+
+      <div class="main">
+        
+        {% for cell in cells %}
+        <div class="cell">
+          <button class="accordion">{{ cell.name }}</button>
+          <div class="panel">
+            <p class="content">{{ cell.body }}</p>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    
+    </div>
+
+    <script src="{{ url_for('static', filename='accordion.js') }}"></script>
+
+  </body>
+
+</html>
