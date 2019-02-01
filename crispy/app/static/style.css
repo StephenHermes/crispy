@@ -77,7 +77,6 @@ header > h1 {
 
 }
 
-
 .accordion.active::after {
   content: "\25bd";
   font-weight: bold;
