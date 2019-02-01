@@ -13,8 +13,6 @@ lorem_ipsum = """
     iaculis vehicula nibh, sodales dignissim ipsum varius volutpat.
 """
 
-
-
 @app.route('/')
 @app.route('/index')
 def index():
@@ -30,13 +28,26 @@ def index():
             'type': 'generic',
             'name': 'Topic 2',
             'body': lorem_ipsum,
-            'children': None
+            'children': [
+                {
+                    'type': 'generic',
+                    'name': 'Topic 2.1',
+                    'body': lorem_ipsum,
+                    'children': None, 
+                },
+                {
+                    'type': 'generic',
+                    'name': 'Topic 2.2',
+                    'body': lorem_ipsum,
+                    'children': None,
+                }
+            ],
         },
         {
             'type': 'generic',
             'name': 'Topic 3',
             'body': lorem_ipsum,
-            'children': None 
+            'children': None, 
         }
     ]
     

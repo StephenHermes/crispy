@@ -61,7 +61,7 @@ header > h1 {
   transition: 0.4s;
 }
 
-.accordion:after {
+.accordion::after {
   content: "\25b7"; 
   font-weight: bold;
   font-size: 20px;
@@ -73,10 +73,15 @@ header > h1 {
 .accordion.active, .accordion:hover {
   background-color: #ff383f;
   color: #eee;
+  transition: 0.4s;
+
 }
 
-.accordion.active:after {
+
+.accordion.active::after {
   content: "\25bd";
   font-weight: bold;
+  font-size: 20px;
   color: #eee;
+  margin-left: 5px;
 }

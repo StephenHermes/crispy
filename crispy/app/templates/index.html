@@ -20,11 +20,15 @@
 
       <div class="main">
         
-        {% for cell in cells %}
+        {# recursive solution in jinja? #}
+        {% for cell in cells recursive %}
         <div class="cell">
           <button class="accordion">{{ cell.name }}</button>
           <div class="panel">
-            <p class="content">{{ cell.body }}</p>
+            <p class="content">{{ cell.body }}</p>      
+            {% if cell.children %}
+              {{ loop(cell.children) }}
+            {% endif %}
           </div>
         </div>
         {% endfor %}
