@@ -22,11 +22,14 @@
         
         {% for cell in cells recursive %}
         <div class="cell">
-          <button class="accordion">{{ cell.name }}</button>
+          <div class="accordion-header">
+            <button class="accordion">{{ cell.name }}</button>
+          <div class="progress-bar" style="width:{{ (100 * cell.progress) | int }}%;"></div>
+          </div>
           <div class="panel">
-            <p class="content">{{ cell.body }}</p>      
-            {% if cell.children %}
-              {{ loop(cell.children) }}
+            <p class="content">{{ cell.description }}</p>      
+            {% if cell.subtasks %}
+              {{ loop(cell.subtasks) }}
             {% endif %}
           </div>
         </div>
