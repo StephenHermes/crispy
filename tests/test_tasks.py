@@ -11,4 +11,3 @@ def test_task(base_task):
     task = base_task
     print(task)
     assert 0
-
